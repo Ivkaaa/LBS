@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#modal-container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(109, 108, 108, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    .modal-wrapp{
+        background-color: white;
+        width: 30%;
+        height: 60%;
+        border-radius: 10px;
+        color: black;
+        padding: 30px;
+
+        h2{
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h3{
+            padding: 10px;
+        }
+
+        h4{
+            padding: 10px;
+        }
+    }
+    button{
+        padding: 5px 8px;
+        position: absolute;
+        top:15px;
+        right: 15px;
+        background-color: red;
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+}

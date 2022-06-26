@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import './app.scss';
+import HomePage from "./Pages/HomePage/home-page";
+import HiringPage from './Pages/HiringPage/hiring-page';
 
 function App() {
+
+  const [frontDev, setFrontDev] = useState([])
+
+  useEffect( () => {
+    fetchFrontDev()
+  }, []) //stavljamo joj drugi paramater koji je empty arr kako bi se izvrsila samo  1
+
+  function fetchFrontDev(){
+    fetch("https://62b47b2a530b26da4cbf99fb.mockapi.io/frontend")
+    .then(res => res.json())
+    .then(developerRes => setFrontDev(developerRes))
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App">
+      <HomePage developerRes={frontDev}></HomePage>
+      {/* <HiringPage></HiringPage> */}
     </div>
   );
 }
